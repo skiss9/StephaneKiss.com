@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="application">
+  <head>
+    <meta charset="utf-8">
+    <title>Stephane Kiss</title>
+    <meta name="description" content="">
+    <base href="/">
+    <link type="text/css" rel="stylesheet" href="app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>Alternate Reality - Burning Man 2014</title>
+    <meta property="fb:app_id" content="741529009289710">
+    <meta property="og:title" content="Alternate Reality - Burning Man 2014">
+    <meta property="og:description" content="This short film portrays the magical, dreamy and inspiring sides of Burning Man. Shot in 2014 documentary style, without any setup or staging, but post-processed with slow motion and creative color grading, techniques typically used for fiction or music video work. Watch full screen with good sound and step into the alternate reality!
+
+Camera: Sony a7s
+Lenses: Canon 35mm f/1.4 L, Canon 16-35mm f/4 IS L with Metabones Adapter IV
+Stabilizer (handheld steadicam): Glidecam HD-1000
+Edited and color-graded in Final Cut Pro X
+Plugins: Tritone Overlays
+
+Soundtrack mixed in Logic Pro">
+    <meta property="og:image" content="https://i.vimeocdn.com/video/518298068_1280.jpg">
+    <meta property="og:image:height" content="720">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:type" content="video">
+    <meta property="og:video:url" content="https://player.vimeo.com/video/127466230?autoplay=1">
+    <meta property="og:video:secure_url" content="https://player.vimeo.com/video/127466230?autoplay=1">
+    <meta property="og:video:type" content="text/html">
+    <meta property="og:video:width" content="640">
+    <meta property="og:video:height" content="360">
+    <meta property="og:video:url" content="https://vimeo.com/moogaloop.swf?clip_id=127466230&amp;autoplay=1">
+    <meta property="og:video:secure_url" content="https://vimeo.com/moogaloop.swf?clip_id=127466230&amp;autoplay=1">
+    <meta property="og:video:type" content="application/x-shockwave-flash">
+    <meta property="og:video:width" content="640">
+    <meta property="og:video:height" content="360">
+    <meta property="og:site_name" content="Stephane Kiss">
+  </head>
+  <body ng-controller="mainController">
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '741529009289710',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+    </script>
+    <script>
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+        return t;
+      }(document, "script", "twitter-wjs"));
+      
+    </script>
+    <div id="fb-root"></div>
+    <header><i ng-click="goTo()" ng-show="!!currentVideo" class="back-button fa fa-arrow-circle-left"></i>
+      <div ng-click="goTo()" class="logo">
+        <div class="title">Stephane Kiss</div>
+        <div class="subtitle">Filmmaker</div>
+      </div>
+      <div class="social-links"><a href="//vimeo.com/stephanekiss" target="_blank"><i class="fa fa-vimeo-square"></i></a><a href="//twitter.com/skiss" target="_blank"><i class="fa fa-twitter-square"></i></a><a href="//facebook.com/skiss" target="_blank"><i class="fa fa-facebook-square"></i></a></div>
+    </header>
+    <div id="home" ng-if="!currentVideo">
+      <div id="home-player">
+        <video autoplay loop poster="/images/home.jpg">
+          <source src="/images/home.mov" type="video/mp4">
+        </video>
+      </div>
+      <div class="thumbnails">
+        <div ng-repeat="video in videos" ng-click="goTo(video)" ng-mousemove="thumbnailIndex = getHoverIndex($event)" ng-mouseleave="thumbnailIndex = null" class="thumbnail">
+          <div class="title">{{ video.shortTitle }}</div><img ng-src="{{ getThumbnailUrl(video, thumbnailIndex) }}">
+        </div>
+      </div>
+    </div>
+    <div id="details" ng-if="currentVideo">
+      <div id="video-player" ng-class="{ 'is-anamorphic': isAnamorphic(currentVideo) }">
+        <iframe ng-src="{{ getEmbedUrl(currentVideo) }}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+      </div>
+      <div class="thumbnails">
+        <div ng-repeat="thumbnailIndex in getThumbnailIndexes()" class="thumbnail"><img ng-src="{{ getThumbnailUrl(currentVideo, thumbnailIndex) }}"></div>
+      </div>
+    </div>
+    <!-- a class="twitter-timeline" href="https://twitter.com/skiss" data-widget-id="607788096965320704">Tweets by @skiss</a-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-64698321-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
