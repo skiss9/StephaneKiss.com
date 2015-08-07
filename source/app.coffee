@@ -8,7 +8,7 @@ app.config (
   $locationProvider.html5Mode(true)
 
   $routeProvider
-    .when('/:video', {})
+    .when('/films/:video', {})
     .otherwise('/', {})
 
 
@@ -24,7 +24,7 @@ app.controller 'mainController', (
 
   $scope.$on '$routeChangeStart', ($evt, route) ->
     slug = getVideoSlug(route)
-    unless slug and _.find(videos, { slug: slug })
+    if slug and not _.find(videos, { slug: slug })
       $location.path('')
 
   $scope.$on '$routeChangeSuccess', ($evt, route) ->
@@ -43,7 +43,6 @@ app.controller 'mainController', (
     else if isLarge
       suffix = '-large'
     return 'images/' + video.slug + '/pic' + suffix + '.jpg'
-    
 
   $scope.getEmbedUrl = (video) ->
     url = null
@@ -58,8 +57,8 @@ app.controller 'mainController', (
   $scope.isAnamorphic = (video) -> !!video.isAnamorphic
 
   $scope.goTo = (video) ->
-    slug = if video then video.slug else ''
-    $location.path(slug)
+    path = if video then 'films/' + video.slug else ''
+    $location.path(path)
 
   $scope.getThumbnailIndexes = -> [1..16]
 

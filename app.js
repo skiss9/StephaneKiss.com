@@ -3,7 +3,7 @@
 
   app.config(function($locationProvider, $routeProvider) {
     $locationProvider.html5Mode(true);
-    return $routeProvider.when('/:video', {}).otherwise('/', {});
+    return $routeProvider.when('/films/:video', {}).otherwise('/', {});
   });
 
   app.controller('mainController', function($scope, $route, $location, $sce, videos) {
@@ -15,9 +15,9 @@
     $scope.$on('$routeChangeStart', function($evt, route) {
       var slug;
       slug = getVideoSlug(route);
-      if (!(slug && _.find(videos, {
+      if (slug && !_.find(videos, {
         slug: slug
-      }))) {
+      })) {
         return $location.path('');
       }
     });
@@ -59,9 +59,9 @@
       return !!video.isAnamorphic;
     };
     $scope.goTo = function(video) {
-      var slug;
-      slug = video ? video.slug : '';
-      return $location.path(slug);
+      var path;
+      path = video ? 'films/' + video.slug : '';
+      return $location.path(path);
     };
     $scope.getThumbnailIndexes = function() {
       return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
