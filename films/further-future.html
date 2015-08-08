@@ -107,9 +107,9 @@ https://pro.beatport.com/track/stars-featuring-shawni-andre-hommen-remix/5935888
       </div>
     </div>
     <footer>
-      <div ng-mouseover="expandFollowButtons()" class="follow-buttons">
-        <div ng-class="{ expanded: followButtonsAreExpanded }" class="follow-button-toggle"><i class="fa fa-tv"></i></div>
-        <ul ng-show="followButtonsAreExpanded">
+      <div class="follow-buttons">
+        <div ng-mouseover="expandFollowButtons()" class="follow-button-toggle"><i class="fa fa-tv"></i></div>
+        <ul ng-class="{ 'is-shown': followButtonsAreExpanded }">
           <li>
             <div data-href="https://www.facebook.com/skiss" data-colorscheme="light" data-layout="button" data-show-faces="true" class="fb-follow">     </div>
           </li>

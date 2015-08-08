@@ -199,7 +199,12 @@ footer
         vertical-align -1px
         
     ul
+      transition opacity 0.8s
+      opacity 0
       margin-top 10px
+      &.is-shown
+        opacity 1
+
       li
         padding 10px 18px
         margin-top 1px

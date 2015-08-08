@@ -233,7 +233,12 @@ footer .follow-buttons .follow-button-toggle i {
   vertical-align: -1px;
 }
 footer .follow-buttons ul {
+  transition: opacity 0.8s;
+  opacity: 0;
   margin-top: 10px;
+}
+footer .follow-buttons ul.is-shown {
+  opacity: 1;
 }
 footer .follow-buttons ul li {
   padding: 10px 18px;
