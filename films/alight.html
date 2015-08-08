@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title>Alight - Burning Man 2013</title>
     <meta property="fb:app_id" content="741529009289710">
     <meta property="og:title" content="Alight - Burning Man 2013">
@@ -102,6 +102,17 @@ Edited and color-graded in Final Cut Pro.">
         <div ng-repeat="thumbnailIndex in getThumbnailIndexes()" class="thumbnail"><img ng-src="{{ getThumbnailUrl(currentVideo, thumbnailIndex) }}"></div>
       </div>
     </div>
+    <footer>
+      <div ng-mouseover="expandFollowButtons()" class="follow-buttons">
+        <div ng-class="{ expanded: followButtonsAreExpanded }" class="follow-button-toggle"><i class="fa fa-tv"></i></div>
+        <ul ng-show="followButtonsAreExpanded">
+          <li>
+            <div data-href="https://www.facebook.com/skiss" data-colorscheme="light" data-layout="button" data-show-faces="true" class="fb-follow">     </div>
+          </li>
+          <li><a href="https://twitter.com/skiss" data-show-screen-name="false" data-show-count="true" class="twitter-follow-button">Follow @skiss</a></li>
+        </ul>
+      </div>
+    </footer>
     <!-- a class="twitter-timeline" href="https://twitter.com/skiss" data-widget-id="607788096965320704">Tweets by @skiss</a-->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

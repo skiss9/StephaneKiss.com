@@ -6,8 +6,9 @@
     return $routeProvider.when('/films/:video', {}).otherwise('/', {});
   });
 
-  app.controller('mainController', function($scope, $route, $location, $sce, videos) {
-    var getVideoSlug;
+  app.controller('mainController', function($scope, $route, $location, $timeout, $sce, videos) {
+    var _folloButtonTimeout, getVideoSlug;
+    _folloButtonTimeout = null;
     getVideoSlug = function(route) {
       var ref;
       return route != null ? (ref = route.params) != null ? ref.video : void 0 : void 0;
@@ -72,11 +73,20 @@
       percent = x / 295;
       return Math.floor(percent * 24) + 1;
     };
-    return $scope.openShareDialog = function() {
+    $scope.openShareDialog = function() {
       return FB.ui({
         method: 'share',
         href: location.href
       });
+    };
+    return $scope.expandFollowButtons = function() {
+      $scope.followButtonsAreExpanded = true;
+      if (_folloButtonTimeout) {
+        $timeout.cancel(_folloButtonTimeout);
+      }
+      return _folloButtonTimeout = $timeout(function() {
+        return $scope.followButtonsAreExpanded = false;
+      }, 8000);
     };
   });
 

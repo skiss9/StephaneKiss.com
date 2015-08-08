@@ -170,17 +170,38 @@ header
     &:hover .title
       display block
 
-#social-buttons
-  display none
-  margin-top 30px
-  margin-bottom 40px
+footer
   text-align center
-  padding 10px 0
-  height 20px
-
-  .fb-follow
-    margin-right 20px
-
-  .fb-follow, .twitter-follow-button
+  
+  .follow-buttons
     display inline-block
-    vertical-align top
+    margin-top 60px
+    text-align center
+
+    .follow-button-toggle
+      display inline-block
+      padding 14px
+      width 20px
+      height 20px
+      background-color light-gray
+      color #424955
+      border-radius 30px
+      font-size 13px
+      cursor pointer
+      no-user-select()
+    
+      &:hover
+        background-color light-gray-hover
+      
+      i
+        display inline-block
+        font-size 19px
+        vertical-align -1px
+        
+    ul
+      margin-top 10px
+      li
+        padding 10px 18px
+        margin-top 1px
+        background-color #282D36
+        text-align center

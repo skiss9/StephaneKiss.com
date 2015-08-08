@@ -16,9 +16,12 @@ app.controller 'mainController', (
   $scope
   $route
   $location
+  $timeout
   $sce
   videos
 ) ->
+
+  _folloButtonTimeout = null
 
   getVideoSlug = (route) -> route?.params?.video
 
@@ -71,3 +74,10 @@ app.controller 'mainController', (
     FB.ui
       method: 'share'
       href: location.href
+
+  $scope.expandFollowButtons = ->
+    $scope.followButtonsAreExpanded = true
+    $timeout.cancel(_folloButtonTimeout) if _folloButtonTimeout
+    _folloButtonTimeout = $timeout ->
+        $scope.followButtonsAreExpanded = false
+      , 8000
