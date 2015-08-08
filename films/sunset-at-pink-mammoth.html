@@ -91,6 +91,7 @@ Stay tuned for my full 2014 Burning Man video.">
       </div>
     </div>
     <div id="details" ng-if="currentVideo">
+      <div ng-click="openShareDialog()" class="share-button">Spread the<i class="fa fa-heartbeat"></i></div>
       <div id="video-player" ng-class="{ 'is-anamorphic': isAnamorphic(currentVideo) }">
         <iframe ng-src="{{ getEmbedUrl(currentVideo) }}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
       </div>
