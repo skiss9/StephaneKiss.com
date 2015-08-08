@@ -64,7 +64,7 @@ table {
   font-style: normal;
 }
 body {
-  margin: 0 auto 100px auto;
+  margin: 0 auto;
   width: 1180px;
   background-color: #424955;
   font-family: 'Lucida Grande';
@@ -207,6 +207,7 @@ footer {
 footer .follow-buttons {
   display: inline-block;
   margin-top: 60px;
+  margin-bottom: 20px;
   text-align: center;
 }
 footer .follow-buttons .follow-button-toggle {
