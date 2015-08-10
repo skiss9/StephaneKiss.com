@@ -80,7 +80,7 @@ header {
 header .back-button {
   position: absolute;
   left: 30px;
-  top: 37px;
+  top: 36px;
   font-size: 38px;
   color: #828ea4;
   cursor: pointer;
@@ -109,11 +109,11 @@ header .logo .subtitle {
 header .social-links {
   position: absolute;
   right: 0;
-  top: 37px;
+  top: 36px;
 }
 header .social-links a {
   float: right;
-  font-size: 30px;
+  font-size: 34px;
   color: #828ea4;
   margin-right: 20px;
 }
