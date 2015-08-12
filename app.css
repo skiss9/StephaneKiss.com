@@ -212,12 +212,11 @@ footer .follow-buttons {
 }
 footer .follow-buttons .follow-button-toggle {
   display: inline-block;
-  padding: 14px;
-  width: 20px;
+  padding: 10px 16px;
   height: 20px;
   background-color: #828ea4;
   color: #424955;
-  border-radius: 30px;
+  border-radius: 5px;
   font-size: 13px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -232,6 +231,7 @@ footer .follow-buttons .follow-button-toggle i {
   display: inline-block;
   font-size: 19px;
   vertical-align: -1px;
+  margin-right: 10px;
 }
 footer .follow-buttons ul {
   transition: opacity 0.8s;
