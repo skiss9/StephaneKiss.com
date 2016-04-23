@@ -95,6 +95,14 @@
 (function() {
   app.constant('videos', [
     {
+      "vimeoId": 161403622,
+      "isAnamorphic": true,
+      "title": "Prelude Forever",
+      "description": "A short choreography showcasing the \"Isabelle\" cotton fringe wrap / scarf from Atelier Prélude.\n\nModel / dancer: Amanda Whipple\nStylist: Virginie Suos / Atelier Prélude\n\nwww.atelierprelude.com",
+      "thumbnail_url": "https://i.vimeocdn.com/video/563627594_1280.jpg",
+      "shortTitle": "Prelude Forever",
+      "slug": "prelude-forever"
+    }, {
       "vimeoId": 128578398,
       "isAnamorphic": true,
       "title": "Further Future",
@@ -140,13 +148,6 @@
       "description": "A music-video style edit shot at Burning Man 2013.\n\nCamera: Panasonic GH3\nLenses: Panasonic 12-35mm f2.8, Voigtlander 17.5mm f0.95\nStabilizer (handheld steady cam): Glidecam HD-1000\nEdited and color-graded in Final Cut Pro.",
       "thumbnail_url": "https://i.vimeocdn.com/video/486971868_1280.jpg",
       "slug": "alight"
-    }, {
-      "vimeoId": 90440491,
-      "title": "The Great Gatsby Night",
-      "description": "",
-      "thumbnail_url": "https://i.vimeocdn.com/video/469648765_1280.jpg",
-      "shortTitle": "The Great Gatsby Night",
-      "slug": "the-great-gatsby-night"
     }
   ]);
 
