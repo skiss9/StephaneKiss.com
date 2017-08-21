@@ -50,7 +50,7 @@
       if (video.vimeoId) {
         url = 'https://player.vimeo.com/video/' + video.vimeoId + '?title=0&byline=0&portrait=0';
       } else if (video.youtubeId) {
-        url = 'https://www.youtube.com/embed/' + video.youtubeId + '?rel=0&amp;showinfo=0';
+        url = 'https://www.youtube.com/embed/' + video.youtubeId + '?showinfo=0&rel=0&origin=http://localhost:8000';
       } else if (video.dacastId) {
         url = 'https://iframe.dacast.com/' + video.dacastId;
       }
@@ -95,6 +95,21 @@
 (function() {
   app.constant('videos', [
     {
+      "shortTitle": "Dusty Memories",
+      "youtubeId": "p4OixRuu2yA",
+      "title": "Dusty Memories - Burning Man 2016",
+      "thumbnail_url": "https://i.ytimg.com/vi/p4OixRuu2yA/maxresdefault.jpg",
+      "description": "After 9 years of consecutive burns and 4 years of creating burning man videos, here's my take on Burning Man 2016.",
+      "slug": "dusty-memories"
+    }, {
+      "shortTitle": "In Dust We Trust",
+      "youtubeId": "dmUCOHvmO7Q",
+      "isAnamorphic": true,
+      "title": "In Dust We Trust - Burning Man 2015",
+      "thumbnail_url": "https://i.ytimg.com/vi/dmUCOHvmO7Q/maxresdefault.jpg",
+      "description": "From magical sunrise moments, to the self-expression of dancers and fire performers, to the more spiritual sides of the festival and the epic burn of the man, this short film offers a deep dive into the moods of Burning Man 2015. Shot with cranes and stabilizers never brought before to the playa, for some unique camera angles and perspectives. Edited in a wide anamorphic format with a soundtrack seamlessly blending 3 tracks, it showcases the festival in a cinematic style.",
+      "slug": "in-dust-we-trust"
+    }, {
       "vimeoId": 161403622,
       "isAnamorphic": true,
       "title": "Prelude Forever",
@@ -129,18 +144,6 @@
       "dacastId": "b/375/f/218835",
       "shortTitle": "Je Suis Charlie",
       "slug": "je-suis-charlie"
-    }, {
-      "title": "St Lucia",
-      "dacastId": "b/375/f/185712",
-      "shortTitle": "St Lucia",
-      "slug": "st-lucia"
-    }, {
-      "shortTitle": "Sunset At Pink Mammoth",
-      "vimeoId": 105745990,
-      "title": "Sunset at Pink Mammoth - Burning Man 2014",
-      "description": "I hope you enjoy this short edit. All the footage was shot in less than 30 minutes the last sunday, as the sun was setting over Pink Mammoth. Hopefully it conveys the magic and intensity of that very special moment.\n\nStay tuned for my full 2014 Burning Man video.",
-      "thumbnail_url": "https://i.vimeocdn.com/video/488640717_1280.jpg",
-      "slug": "sunset-at-pink-mammoth"
     }, {
       "shortTitle": "Alight",
       "vimeoId": 104424875,

@@ -52,7 +52,7 @@ app.controller 'mainController', (
     if video.vimeoId
       url = 'https://player.vimeo.com/video/' + video.vimeoId + '?title=0&byline=0&portrait=0'
     else if video.youtubeId
-      url = 'https://www.youtube.com/embed/' + video.youtubeId + '?rel=0&amp;showinfo=0'
+      url = 'https://www.youtube.com/embed/' + video.youtubeId + '?showinfo=0&rel=0&origin=http://localhost:8000'
     else if video.dacastId
       url = 'https://iframe.dacast.com/' + video.dacastId
     $sce.trustAsResourceUrl(url)
