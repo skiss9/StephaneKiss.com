@@ -98,7 +98,7 @@
       "shortTitle": "Dusty Memories",
       "youtubeId": "p4OixRuu2yA",
       "title": "Dusty Memories - Burning Man 2016",
-      "thumbnail_url": "https://i.ytimg.com/vi/p4OixRuu2yA/maxresdefault.jpg",
+      "thumbnail_url": "http://stephanekiss.com/images/dusty-memories/pic-large.jpg",
       "description": "After 9 years of consecutive burns and 4 years of creating burning man videos, here's my take on Burning Man 2016.",
       "slug": "dusty-memories"
     }, {
