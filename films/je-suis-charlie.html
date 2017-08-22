@@ -12,6 +12,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title></title>
+    <meta property="fb:app_id" content="741529009289710">
+    <meta property="og:url" content="http://stephanekiss.com/films/je-suis-charlie">
+    <meta property="og:title" content="undefined">
+    <meta property="og:description" content="undefined">
+    <meta property="og:image" content="undefined">
+    <meta property="og:type" content="video">
+    <meta property="og:video:url" content="http://www.youtube.com/embed/Ss8FKgD6ohY">
+    <meta property="og:video:type" content="text/html">
+    <meta property="og:video:width" content="640">
+    <meta property="og:video:height" content="360">
+    <meta property="og:video:url" content="http://www.youtube.com/v/Ss8FKgD6ohY?version=3&amp;amp;autohide=1">
+    <meta property="og:video:type" content="application/x-shockwave-flash">
+    <meta property="og:video:width" content="640">
+    <meta property="og:video:height" content="360">
     <meta name="viewport" content="width=1180px">
   </head>
   <body ng-controller="mainController">
@@ -70,7 +85,7 @@
       </div>
     </div>
     <div id="details" ng-if="currentVideo">
-      <div ng-if="currentVideo.vimeoId" ng-click="openShareDialog()" class="share-button">Spread the<i class="fa fa-heartbeat"></i></div>
+      <div ng-if="currentVideo.vimeoId || currentVideo.youtubeId" ng-click="openShareDialog()" class="share-button">Spread the<i class="fa fa-heartbeat"></i></div>
       <div id="video-player" ng-class="{ 'is-anamorphic': isAnamorphic(currentVideo) }">
         <iframe ng-src="{{ getEmbedUrl(currentVideo) }}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
       </div>

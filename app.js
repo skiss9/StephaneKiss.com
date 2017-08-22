@@ -140,9 +140,8 @@
       "shortTitle": "Classical Revolution",
       "slug": "classical-revolution"
     }, {
-      "title": "Je Suis Charlie",
-      "dacastId": "b/375/f/218835",
       "shortTitle": "Je Suis Charlie",
+      "youtubeId": "Ss8FKgD6ohY",
       "slug": "je-suis-charlie"
     }, {
       "shortTitle": "Alight",

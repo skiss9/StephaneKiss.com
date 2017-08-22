@@ -97,7 +97,7 @@ Soundtrack mixed in Logic Pro">
       </div>
     </div>
     <div id="details" ng-if="currentVideo">
-      <div ng-if="currentVideo.vimeoId" ng-click="openShareDialog()" class="share-button">Spread the<i class="fa fa-heartbeat"></i></div>
+      <div ng-if="currentVideo.vimeoId || currentVideo.youtubeId" ng-click="openShareDialog()" class="share-button">Spread the<i class="fa fa-heartbeat"></i></div>
       <div id="video-player" ng-class="{ 'is-anamorphic': isAnamorphic(currentVideo) }">
         <iframe ng-src="{{ getEmbedUrl(currentVideo) }}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
       </div>

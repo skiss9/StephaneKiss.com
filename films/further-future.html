@@ -98,7 +98,7 @@ https://pro.beatport.com/track/stars-featuring-shawni-andre-hommen-remix/5935888
       </div>
     </div>
     <div id="details" ng-if="currentVideo">
-      <div ng-if="currentVideo.vimeoId" ng-click="openShareDialog()" class="share-button">Spread the<i class="fa fa-heartbeat"></i></div>
+      <div ng-if="currentVideo.vimeoId || currentVideo.youtubeId" ng-click="openShareDialog()" class="share-button">Spread the<i class="fa fa-heartbeat"></i></div>
       <div id="video-player" ng-class="{ 'is-anamorphic': isAnamorphic(currentVideo) }">
         <iframe ng-src="{{ getEmbedUrl(currentVideo) }}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
       </div>
