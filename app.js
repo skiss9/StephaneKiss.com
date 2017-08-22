@@ -142,6 +142,9 @@
     }, {
       "shortTitle": "Je Suis Charlie",
       "youtubeId": "Ss8FKgD6ohY",
+      "title": "Je Suis Charlie - San Francisco",
+      "thumbnail_url": "https://i.ytimg.com/vi/Ss8FKgD6ohY/maxresdefault.jpg",
+      "description": "This short clip documents the \"Je suis charlie\" rally that happened in San Francisco on January 7th, and intends to promote peace, non-violence, and fraternity across all countries and religions.",
       "slug": "je-suis-charlie"
     }, {
       "shortTitle": "Alight",
